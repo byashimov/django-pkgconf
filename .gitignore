@@ -2,3 +2,5 @@
 *.py[co]
 .coverage
 __pycache__
+build/
+dist/
