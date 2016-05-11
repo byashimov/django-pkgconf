@@ -107,6 +107,14 @@ Read the quickstart_.
 Compatability
 -------------
 
+.. image:: https://travis-ci.org/byashimov/django-pkgconf.svg?branch=master
+    :alt: Build Status
+    :target: https://travis-ci.org/byashimov/django-pkgconf
+
+.. image:: https://codecov.io/gh/byashimov/django-pkgconf/branch/master/graph/badge.svg
+    :alt: Codecov
+    :target: https://codecov.io/gh/byashimov/django-pkgconf
+
 Tested on py 2.7, 3.4, 3.5 with django 1.8, 1.9.
 
 
