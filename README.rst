@@ -52,7 +52,7 @@ There is nothing more to say:
     # emails/foo.py
     # Note: your MyEmailService class becomes a module,
     # you import it directly
-    import .conf
+    from . import conf
 
     service = Service(username=conf.USERNAME, password=conf.PASSWORD, ...)
 
@@ -84,7 +84,7 @@ It looks for the required setting in django's configuration file first and retur
 .. code-block:: python
 
     # emails/foo.py
-    import .conf
+    from . import conf
 
     conf.USERNAME
     'test_username'
