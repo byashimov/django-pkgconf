@@ -45,6 +45,10 @@ Prefixes are everywhere. You always have to say ``MYEMAILSERVICE_`` in every sin
         USERNAME = 'username'
         PASSWORD = 'password'
 
+        @property
+        def DEBUG(self):
+            return self.USERNAME.startswith('test_')
+
 There is nothing more to say:
 
 .. code-block:: python
@@ -90,6 +94,8 @@ It looks for the required setting in django's configuration file first and retur
     'test_username'
     conf.PASSWORD
     'password'  # Original value
+    conf.DEBUG
+    True
 
 
 Installation
@@ -129,6 +135,20 @@ Limitations
 
 - Due to the code simplicity, ``property`` descriptor is used to *get* data from the settings. That means you can not *set* (or *change*) configuration values *in action*. I don't know why you would do that, but I have to warn you.
 - Since your app's settings are defined in separate file, they are not accessible via ``django.conf.settings`` (until you override them in your project settings). This application doesn't create backward compatibility links. You should always use package configuration module.
+
+
+Changelog
+---------
+
+v0.2.0
+~~~~~~
+- Added ``__prefix__`` attribute to support prefix-names with underscores.
+- Added instance method and property support
+- **Backward incompatible change:** functions must have ``self`` as the first argument now.
+
+v0.1.0
+~~~~~~
+- First public release
 
 .. _django-appsettings: https://github.com/jaredly/django-appsettings
 .. _django-appconf: https://github.com/django-compressor/django-appconf
