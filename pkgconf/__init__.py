@@ -26,7 +26,7 @@ class ConfMeta(type):
             for key, value in attrs.items()
             if not key.startswith('__')
         }
-        attrs.update(fields, __all__=fields.keys())
+        attrs.update(fields, __all__=tuple(fields))
 
         # Ready to build
         cls = super(ConfMeta, mcs).__new__(mcs, name, bases, attrs)
