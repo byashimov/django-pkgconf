@@ -83,19 +83,16 @@ Cool style (django-configurations_ way):
     class Test(Prod):
         MYEMAILSERVICE_USERNAME = 'test_username'
 
-It looks for the required setting in django's configuration file first and returns original value if nothing was found:
+It looks for the required setting in django's configuration file first and returns original value if it's not overridden:
 
 .. code-block:: python
 
     # emails/foo.py
     from . import conf
 
-    conf.USERNAME
-    'test_username'
-    conf.PASSWORD
-    'password'  # Original value
-    conf.DEBUG
-    True
+    conf.USERNAME  # 'test_username'
+    conf.PASSWORD  # 'password' - returns original value
+    conf.DEBUG  # True
 
 
 Installation
@@ -121,7 +118,7 @@ Compatability
     :alt: Codecov
     :target: https://codecov.io/gh/byashimov/django-pkgconf
 
-Tested on py 2.7, 3.4, 3.5 with django 1.8, 1.9.
+Tested on py 2.7, 3.4, 3.5 with django 1.8, 1.9, 1.10.
 
 
 Powered siblings
@@ -140,10 +137,14 @@ Limitations
 Changelog
 ---------
 
+v0.2.1
+~~~~~~
+- Added ``import *`` support.
+
 v0.2.0
 ~~~~~~
 - Added ``__prefix__`` attribute to support prefix-names with underscores.
-- Added instance method and property support
+- Added instance method and property support.
 - **Backward incompatible change:** functions must have ``self`` as the first argument now.
 
 v0.1.0

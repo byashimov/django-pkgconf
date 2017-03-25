@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-pkgconf',
-    version='0.2.0',
+    version='0.2.1',
     description='Yet another application settings helper.',
     url='https://github.com/byashimov/django-pkgconf',
     author='Murad Byashimov',
