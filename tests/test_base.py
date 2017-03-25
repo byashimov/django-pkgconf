@@ -49,14 +49,6 @@ class MyConfTest(TestCase):
         self.assertEqual(myconf.METHOD.__name__, 'METHOD')
         self.assertEqual(myconf.METHOD.__doc__, 'Method docstring')
 
-    def test_all(self):
-        before_import = set(locals().keys())
-        from myconf import *
-        after_import = set(locals().keys())
-        self.assertEqual(
-            sorted(after_import - before_import - {'before_import'}),
-            ['BOOLEAN', 'INTEGER', 'LIST', 'METHOD', 'PROPERTY', 'STRING'])
-
 
 class MyPrefixConfTest(TestCase):
     def test_setup(self):
