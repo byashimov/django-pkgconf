@@ -1,8 +1,8 @@
-from setuptools import find_packages, setup
+from setuptools import setup
 
 setup(
     name='django-pkgconf',
-    version='0.2.1',
+    version='0.2.2',
     description='Yet another application settings helper.',
     url='https://github.com/byashimov/django-pkgconf',
     author='Murad Byashimov',
