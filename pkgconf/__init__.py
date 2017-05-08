@@ -20,13 +20,13 @@ def proxy(attr, default):
 
 class ConfMeta(type):
     def __new__(mcs, name, bases, attrs):
-        prefix = attrs.get('__prefix__', name.upper()) + '_'
+        prefix = attrs.pop('__prefix__', name.upper())
         fields = {
-            key: proxy(prefix + key, value)
+            key: proxy(prefix + '_' + key, value)
             for key, value in attrs.items()
             if not key.startswith('__')
         }
-        attrs.update(fields, __all__=tuple(fields))
+        attrs.update(fields, __all__=tuple(fields), __prefix__=prefix)
 
         # Ready to build
         cls = super(ConfMeta, mcs).__new__(mcs, name, bases, attrs)
