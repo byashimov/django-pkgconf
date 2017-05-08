@@ -9,6 +9,9 @@ class MyConfTest(SimpleTestCase):
     def test_setup(self):
         self.assertEqual(myconf.__name__, 'myconf')
 
+        # Generated prefix
+        self.assertEqual(myconf.__prefix__, 'MYAPP')
+
     def test_defaults(self):
         self.assertEqual(myconf.LIST, [])
         self.assertEqual(myconf.STRING, 'test')
