@@ -1,11 +1,11 @@
-from django.test import TestCase
+from django.test import SimpleTestCase
 from django.test.utils import override_settings
 
 import myconf
 import myprefixconf
 
 
-class MyConfTest(TestCase):
+class MyConfTest(SimpleTestCase):
     def test_setup(self):
         self.assertEqual(myconf.__name__, 'myconf')
 
@@ -50,7 +50,7 @@ class MyConfTest(TestCase):
         self.assertEqual(myconf.METHOD.__doc__, 'Method docstring')
 
 
-class MyPrefixConfTest(TestCase):
+class MyPrefixConfTest(SimpleTestCase):
     def test_setup(self):
         self.assertEqual(myprefixconf.__prefix__, 'FOO_BAR')
 
