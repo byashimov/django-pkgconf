@@ -137,9 +137,11 @@ Limitations
 Changelog
 ---------
 
-v0.2.1
-~~~~~~
+v0.2.1 - 0.2.2
+~~~~~~~~~~~~~~
 - Added ``import *`` support.
+- ``__prefix__`` is generated automatically if not presented in class.
+  That may help to build graceful exceptions like ``'foo_value' was not found in MYAPP_FOO_SETTING``.
 
 v0.2.0
 ~~~~~~
