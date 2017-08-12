@@ -3,6 +3,7 @@ from django.test.utils import override_settings
 
 import myconf
 import myprefixconf
+import mymixinconf
 
 
 class MyConfTest(SimpleTestCase):
@@ -63,3 +64,15 @@ class MyPrefixConfTest(SimpleTestCase):
     @override_settings(FOO_BAR_BOOLEAN=False)
     def test_changes(self):
         self.assertEqual(myprefixconf.BOOLEAN, False)
+
+
+class MyMixinConfTest(SimpleTestCase):
+    def test_defaults(self):
+        self.assertEqual(mymixinconf.FOO, 'foo')
+        self.assertEqual(mymixinconf.BAR, 'original bar')
+
+    @override_settings(MYAPP_FOO='new foo', MYAPP_BAZ='new baz')
+    def test_changes(self):
+        self.assertEqual(mymixinconf.FOO, 'new foo')
+        self.assertEqual(mymixinconf.BAR, 'new bar')
+        self.assertEqual(mymixinconf.BAZ, 'new baz')
