@@ -95,6 +95,31 @@ It looks for the required setting in django's configuration file first and retur
     conf.DEBUG  # True
 
 
+Since ``0.3.0`` mixins are supported:
+
+.. code-block:: python
+
+    from pkgconf import Conf
+
+    class FacebookMixin:
+        FACEBOOK_APP_ID = 'foo'
+        FACEBOOK_SECRET = 'bar'
+
+
+    class TwitterMixin:
+        TWITTER_APP_ID = 'foo'
+        TWITTER_SECRET = 'bar'
+
+
+    class InstagramMixin:
+        INSTAGRAM_APP_ID = 'foo'
+        INSTAGRAM_SECRET = 'bar'
+
+
+    class SocialAppConf(FacebookMixin, TwitterMixin, InstagramMixin, Conf):
+        DEBUG = True
+
+
 Installation
 ------------
 
@@ -136,6 +161,10 @@ Limitations
 
 Changelog
 ---------
+
+v0.3.0
+~~~~~~
+- Added mixins support.
 
 v0.2.1 - 0.2.2
 ~~~~~~~~~~~~~~
