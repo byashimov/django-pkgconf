@@ -1,9 +1,13 @@
 from setuptools import setup
 
+with open('README.rst', 'r') as f:
+    long_description = f.read()
+
 setup(
     name='django-pkgconf',
     version='0.4.0',
     description='Yet another application settings helper.',
+    long_description=long_description,
     url='https://github.com/byashimov/django-pkgconf',
     author='Murad Byashimov',
     author_email='byashimov@gmail.com',
