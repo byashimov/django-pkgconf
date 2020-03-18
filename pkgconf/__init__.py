@@ -1,6 +1,5 @@
 import sys
 from functools import partial, update_wrapper
-from django.utils import six
 
 
 def proxy(attr, default):
@@ -42,5 +41,5 @@ class ConfMeta(type):
         return new_cls
 
 
-class Conf(six.with_metaclass(ConfMeta)):
+class Conf(metaclass=ConfMeta):
     __abstract__ = True

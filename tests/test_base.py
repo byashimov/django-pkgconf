@@ -2,8 +2,8 @@ from django.test import SimpleTestCase
 from django.test.utils import override_settings
 
 import myconf
-import myprefixconf
 import mymixinconf
+import myprefixconf
 
 
 class MyConfTest(SimpleTestCase):

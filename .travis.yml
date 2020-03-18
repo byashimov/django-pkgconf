@@ -1,27 +1,37 @@
 sudo: false
 language: python
-python: 3.5
-env:
-  matrix:
-    - TOXENV=py27-django18
-    - TOXENV=py34-django18
-    - TOXENV=py35-django18
-    - TOXENV=py27-django19
-    - TOXENV=py34-django19
-    - TOXENV=py35-django19
-    - TOXENV=py27-django110
-    - TOXENV=py34-django110
-    - TOXENV=py35-django110
-    - TOXENV=py27-django111
-    - TOXENV=py34-django111
-    - TOXENV=py35-django111
-cache:
-  directories:
-    - $HOME/.cache/pip
+cache: pip
+matrix:
+  include:
+    - env: TOXENV=py35-django111
+      python: 3.5
+    - env: TOXENV=py36-django111
+      python: 3.6
+    - env: TOXENV=py37-django111
+      python: 3.7
+    - env: TOXENV=py35-django111
+      python: 3.8
+    - env: TOXENV=py35-django22
+      python: 3.5
+    - env: TOXENV=py36-django22
+      python: 3.6
+    - env: TOXENV=py37-django22
+      python: 3.7
+    - env: TOXENV=py35-django22
+      python: 3.8
+    - env: TOXENV=py35-django30
+      python: 3.5
+    - env: TOXENV=py36-django30
+      python: 3.6
+    - env: TOXENV=py37-django30
+      python: 3.7
+    - env: TOXENV=py35-django30
+      python: 3.8
 install:
-  - pip install tox codecov
+  - pip install tox
 script:
   - tox
 after_success:
+  - pip install codecov
   - coverage report
   - codecov

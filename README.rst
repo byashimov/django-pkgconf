@@ -143,7 +143,7 @@ Compatability
     :alt: Codecov
     :target: https://codecov.io/gh/byashimov/django-pkgconf
 
-Tested on py 2.7, 3.4, 3.5 with django 1.8, 1.9, 1.10.
+Tested on py 3.5, 3.6, 3.7, 3.8 with django 1.11, 2.2, 3.0.
 
 
 Powered siblings
@@ -161,6 +161,10 @@ Limitations
 
 Changelog
 ---------
+
+v0.4.0
+~~~~~~
+- Python 3 only
 
 v0.3.0
 ~~~~~~
