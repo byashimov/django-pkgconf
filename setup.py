@@ -5,7 +5,7 @@ with open('README.rst', 'r') as f:
 
 setup(
     name='django-pkgconf',
-    version='0.4.0',
+    version='0.5.0',
     description='Yet another application settings helper.',
     long_description=long_description,
     url='https://github.com/byashimov/django-pkgconf',
